@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunPower Elite | Solutions Solaires Haut de Gamme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de couleurs et polices */
+        :root {
+            --primary: #FFD700;
+            --primary-light: #FFE44D;
+            --primary-dark: #FFAA00;
+            --secondary: #00B4D8;
+            --secondary-light: #48CAE4;
+            --secondary-dark: #0077B6;
+            --accent: #9D4EDD;
+            --dark: #0A1128;
+            --darker: #060C1F;
+            --light: #F8F9FA;
+            --lighter: #FFFFFF;
+            --success: #38B000;
+            --warning: #FF9E00;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-dark: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--secondary));
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(255, 213, 0, 0.4);
+            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: all 0.3s ease;
+            --border-radius: 20px;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 213, 0, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 180, 216, 0.03) 0%, transparent 20%);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 80px 0;
+            opacity: 0.3;
+        }
+
+        /* Effets de particules personnalisés */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header et navigation premium */
+        header {
+            background-color: rgba(10, 17, 40, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 10000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 213, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(10, 17, 40, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+            animation: pulseGlow 3s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 213, 0, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 213, 0, 0.8); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary), var(--lighter));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--secondary-light);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .nav-links a:hover::before {
+            left: 0;
+        }
+
+        .nav-links a i {
+            font-size: 14px;
+        }
+
+        .cta-nav {
+            background: var(--gradient);
+            color: var(--dark) !important;
+            font-weight: 700;
+            padding: 12px 28px !important;
+            box-shadow: var(--shadow-glow);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: var(--gradient);
+            border: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Section Hero ultra premium */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: kenburns 30s infinite alternate;
+            filter: brightness(0.7) contrast(1.2);
+        }
+
+        @keyframes kenburns {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(0.5deg); }
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(10, 17, 40, 0.9) 0%, 
+                rgba(10, 17, 40, 0.7) 50%, 
+                rgba(10, 17, 40, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            padding: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 200px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 80px;
+            max-width: 1000px;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 213, 0, 0.4);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Calculateur premium */
+        .calculator-section {
+            background: linear-gradient(135deg, rgba(10, 17, 40, 0.95), rgba(6, 12, 31, 0.95));
+            border-radius: var(--border-radius);
+            margin: 0 auto;
+            max-width: 1400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 213, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 60px;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        .calculator-container:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .calculator-form h3, .calculator-results h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+        }
+
+        .range-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(to right, var(--secondary-dark), var(--primary));
+            border-radius: 10px;
+            outline: none;
+            margin: 20px 0;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 213, 0, 0.8);
+            border: 4px solid var(--dark);
+            transition: var(--transition);
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(255, 213, 0, 1);
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            color: var(--light);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .range-value-display {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checkbox-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 213, 0, 0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .checkbox-item:hover::before {
+            left: 100%;
+        }
+
+        .checkbox-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 213, 0, 0.2);
+        }
+
+        .checkbox-item.active {
+            background: rgba(255, 213, 0, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 213, 0, 0.2);
+        }
+
+        .checkbox-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .checkbox-content {
+            flex: 1;
+        }
+
+        .checkbox-content span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-content small {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        .checkbox-item input {
+            display: none;
+        }
+
+        /* Résultats premium */
+        .results-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .recommendation-card {
+            background: var(--gradient-dark);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .recommendation-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Section Rendez-vous premium */
+        .appointment-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 80px;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        .appointment-container:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .appointment-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-input {
+            position: relative;
+        }
+
+        .form-input input,
+        .form-input select,
+        .form-input textarea {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-input input:focus,
+        .form-input select:focus,
+        .form-input textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 213, 0, 0.2);
+        }
+
+        .form-input label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--dark);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer premium */
+        footer {
+            background: linear-gradient(135deg, var(--darker), #050916);
+            padding: 120px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 18px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(5deg);
+            color: var(--dark);
+        }
+
+        .social-icon:hover::before {
+            left: 0;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 16px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        /* Animations avancées */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Effets de scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design premium */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(10, 17, 40, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: var(--transition);
+                z-index: 9999;
+                backdrop-filter: blur(20px);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .calculator-container, .appointment-container {
+                padding: 40px 30px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+                font-size: 16px;
+                width: 100%;
+            }
+            
+            .appointment-container {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Effet de curseur personnalisé */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: all 0.2s ease;
+        }
+
+        /* Loading screen premium */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid transparent;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-xl);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Écran de chargement -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <h2 style="color: var(--primary); margin-top: 20px;">SunPower Elite</h2>
+        <p style="opacity: 0.7; margin-top: 10px;">Chargement de l'expérience solaire...</p>
+    </div>
+
+    <!-- Curseur personnalisé -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particules -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>SunPower Elite</h1>
+                        <span>SOLUTIONS SOLAIRES</span>
+                    </div>
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#calculateur"><i class="fas fa-calculator"></i> Calculateur</a></li>
+                    <li><a href="#rendezvous"><i class="fas fa-calendar-alt"></i> Rendez-vous</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+                    <li><a href="#calculateur" class="cta-nav"><i class="fas fa-bolt"></i> Devis Gratuit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg"></div>
+        <div class="hero-bg-overlay"></div>
+        
+        <div class="container hero-content">
+            <h1 class="reveal">L'ÉNERGIE DU FUTUR COMMENCE ICI</h1>
+            <p class="reveal">Transformez votre maison en centrale énergétique intelligente. Notre technologie de pointe vous garantit jusqu'à 80% d'économies sur vos factures d'électricité.</p>
+            
+            <div class="hero-buttons reveal">
+                <a href="#calculateur" class="btn">
+                    <i class="fas fa-bolt"></i>
+                    <span>Calculer mes économies</span>
+                </a>
+                <a href="#rendezvous" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Voir la démo</span>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-card reveal">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-text">Économies moyennes</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number">25 ans</span>
+                    <span class="stat-text">Garantie produit</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-text">Installations réussies</span>
+                </div>
+                <div class="stat-card reveal">
+                    <span class="stat-number">48h</span>
+                    <span class="stat-text">Installation moyenne</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Calculateur -->
+    <section class="calculator-section" id="calculateur">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="reveal">CALCULATEUR INTELLIGENT</h2>
+                <p class="reveal">Notre algorithme analyse 15 paramètres pour vous proposer la solution solaire parfaitement adaptée à vos besoins.</p>
+            </div>
+            
+            <div class="calculator-container reveal">
+                <div class="calculator-form">
+                    <h3><i class="fas fa-sliders-h"></i> Paramètres</h3>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-ruler-combined"></i> Surface habitable</label>
+                        <div class="range-container">
+                            <input type="range" id="surface" min="50" max="500" value="150" step="10">
+                            <div class="range-value-display" id="surfaceValue">150 m²</div>
+                            <div class="range-labels">
+                                <span>50 m²</span>
+                                <span>500 m²</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-home"></i> Type d'habitation</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item active" data-type="maison">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Maison individuelle</span>
+                                    <small>Surface moyenne 150m²</small>
+                                </div>
+                            </div>
+                            <div class="checkbox-item" data-type="appartement">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Appartement</span>
+                                    <small>Surface moyenne 80m²</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-bolt"></i> Équipements énergivores</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item active" data-equipment="piscine">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-swimming-pool"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Piscine</span>
+                                    <small>+ 2000 kWh/an</small>
+                                </div>
+                            </div>
+                            <div class="checkbox-item active" data-equipment="voiture">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Voiture électrique</span>
+                                    <small>+ 3000 kWh/an</small>
+                                </div>
+                            </div>
+                            <div class="checkbox-item" data-equipment="clim">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Climatisation</span>
+                                    <small>+ 1500 kWh/an</small>
+                                </div>
+                            </div>
+                            <div class="checkbox-item active" data-equipment="chauffage">
+                                <div class="checkbox-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="checkbox-content">
+                                    <span>Chauffage électrique</span>
+                                    <small>+ 8000 kWh/an</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-sun"></i> Exposition au soleil</label>
+                        <div class="range-container">
+                            <input type="range" id="sunExposure" min="1" max="10" value="7" step="1">
+                            <div class="range-value-display" id="sunExposureValue">7/10</div>
+                            <div class="range-labels">
+                                <span>Faible</span>
+                                <span>Optimale</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" id="calculateBtn" style="width: 100%;">
+                        <i class="fas fa-calculator"></i>
+                        <span>Calculer mon projet solaire</span>
+                    </button>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3><i class="fas fa-chart-pie"></i> Résultats personnalisés</h3>
+                    
+                    <div class="results-box">
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-solar-panel"></i>
+                                <span>Puissance requise</span>
+                            </div>
+                            <div class="result-value" id="powerNeeded">-- kW</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-th-large"></i>
+                                <span>Panneaux nécessaires</span>
+                            </div>
+                            <div class="result-value" id="panelCount">--</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-expand-alt"></i>
+                                <span>Surface de toit</span>
+                            </div>
+                            <div class="result-value" id="panelSurface">-- m²</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Investissement total</span>
+                            </div>
+                            <div class="result-value" id="estimatedCost">-- €</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Économies annuelles</span>
+                            </div>
+                            <div class="result-value" id="annualSavings">-- €/an</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">
+                                <i class="fas fa-history"></i>
+                                <span>Retour sur investissement</span>
+                            </div>
+                            <div class="result-value" id="roi">-- ans</div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <h4><i class="fas fa-lightbulb"></i> Recommandation exclusive</h4>
+                            <p id="voltageRecommendation">Système 48V avec onduleur hybride 8kW, batteries de stockage et gestion intelligente de l'énergie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Rendez-vous -->
+    <section class="appointment-section" id="rendezvous">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="reveal">CONSULTATION PREMIUM</h2>
+                <p class="reveal">Réservez une consultation personnalisée avec l'un de nos ingénieurs spécialisés.</p>
+            </div>
+            
+            <div class="appointment-container reveal">
+                <form class="appointment-form" id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-input">
+                            <input type="text" id="name" required>
+                            <label for="name">Nom complet *</label>
+                        </div>
+                        <div class="form-input">
+                            <input type="email" id="email" required>
+                            <label for="email">Adresse email *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-input">
+                            <input type="tel" id="phone" required>
+                            <label for="phone">Téléphone *</label>
+                        </div>
+                        <div class="form-input">
+                            <input type="date" id="date" required>
+                            <label for="date">Date souhaitée *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-input">
+                            <select id="consultationType" required>
+                                <option value="">Type de consultation</option>
+                                <option value="video">Visio-conférence</option>
+                                <option value="phone">Téléphonique</option>
+                                <option value="onsite">Sur site</option>
+                            </select>
+                            <label for="consultationType">Type de consultation *</label>
+                        </div>
+                        <div class="form-input">
+                            <select id="budget" required>
+                                <option value="">Budget estimé</option>
+                                <option value="10000">10 000 - 15 000 €</option>
+                                <option value="15000">15 000 - 25 000 €</option>
+                                <option value="25000">25 000 - 40 000 €</option>
+                                <option value="40000">40 000 € et plus</option>
+                            </select>
+                            <label for="budget">Budget estimé *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-input" style="margin-bottom: 40px;">
+                        <textarea id="message" rows="4" placeholder="Décrivez votre projet, vos objectifs et toute information pertinente..."></textarea>
+                        <label for="message">Votre projet</label>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Réserver ma consultation premium</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo" style="justify-content: flex-start;">
+                        <div class="logo-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>SunPower Elite</h1>
+                            <span>EXCELLENCE SOLAIRE</span>
+                        </div>
+                    </a>
+                    <p style="opacity: 0.7;">Leader européen des solutions solaires haut de gamme depuis 2012. Plus de 5 000 installations réalisées avec une satisfaction client de 98%.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Panneaux solaires</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Systèmes hybrides</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Batteries de stockage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Recharge véhicules</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gestion intelligente</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Entreprise</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Notre histoire</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Nos valeurs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Carrières</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Presse</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog technique</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Siège social</strong>
+                                <span>88 Avenue du Soleil<br>75008 Paris</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <span>01 88 88 88 88</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>elite@sunpower.fr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SunPower Elite. Tous droits réservés. | <a href="#" style="color: var(--primary);">Politique de confidentialité</a> | <a href="#" style="color: var(--primary);">Mentions légales</a> | <a href="#" style="color: var(--primary);">CGV</a></p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Certifications : QualiPV • RGE • ISO 9001 • Solar Europe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i> Votre demande a été enregistrée avec succès !
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Écran de chargement
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Particules.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#FFD700" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00B4D8",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // Curseur personnalisé
+        const cursor = document.getElementById('cursor');
+        const cursorDot = document.getElementById('cursorDot');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            cursorDot.style.transform = 'translate(-50%, -50%) scale(0.5)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+
+        // Effets de survol
+        document.querySelectorAll('a, button, .checkbox-item').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursor.style.borderColor = 'var(--primary-light)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.borderColor = 'var(--primary)';
+            });
+        });
+
+        // Navigation mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Effet de scroll sur le header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Calculateur solaire avancé
+        const surfaceSlider = document.getElementById('surface');
+        const surfaceValue = document.getElementById('surfaceValue');
+        const sunExposureSlider = document.getElementById('sunExposure');
+        const sunExposureValue = document.getElementById('sunExposureValue');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const checkboxes = document.querySelectorAll('.checkbox-item');
+
+        surfaceSlider.addEventListener('input', () => {
+            surfaceValue.textContent = `${surfaceSlider.value} m²`;
+        });
+
+        sunExposureSlider.addEventListener('input', () => {
+            sunExposureValue.textContent = `${sunExposureSlider.value}/10`;
+        });
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('active');
+                calculateSolarEstimate();
+            });
+        });
+
+        calculateBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            calculateSolarEstimate();
+            
+            // Animation du bouton
+            calculateBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                calculateBtn.style.transform = 'scale(1)';
+            }, 200);
+        });
+
+        function calculateSolarEstimate() {
+            // Paramètres complexes
+            const surface = parseInt(surfaceSlider.value);
+            const sunExposure = parseInt(sunExposureSlider.value);
+            const activeCheckboxes = document.querySelectorAll('.checkbox-item.active');
+            
+            // Calculs avancés
+            let baseConsumption = surface * 100; // kWh/an par m²
+            let equipmentBonus = 0;
+            
+            activeCheckboxes.forEach(checkbox => {
+                if (checkbox.dataset.equipment === 'piscine') equipmentBonus += 2000;
+                if (checkbox.dataset.equipment === 'voiture') equipmentBonus += 3000;
+                if (checkbox.dataset.equipment === 'clim') equipmentBonus += 1500;
+                if (checkbox.dataset.equipment === 'chauffage') equipmentBonus += 8000;
+            });
+            
+            const totalConsumption = baseConsumption + equipmentBonus;
+            const sunFactor = sunExposure / 10;
+            const efficiencyFactor = 0.18; // Rendement des panneaux
+            const hoursOfSun = 1500; // Heures d'ensoleillement annuelles
+            
+            // Puissance requise
+            const powerNeeded = (totalConsumption / (hoursOfSun * sunFactor * efficiencyFactor)).toFixed(1);
+            
+            // Nombre de panneaux (450W chacun)
+            const panelCount = Math.ceil(powerNeeded * 1000 / 450);
+            
+            // Surface nécessaire
+            const panelSurface = (panelCount * 2.2).toFixed(1);
+            
+            // Coût estimé (€/W)
+            const costPerWatt = 2.5;
+            const estimatedCost = Math.round(powerNeeded * 1000 * costPerWatt);
+            
+            // Économies annuelles
+            const electricityPrice = 0.18; // €/kWh
+            const annualSavings = Math.round(totalConsumption * electricityPrice * 0.75);
+            
+            // ROI
+            const roi = (estimatedCost / annualSavings).toFixed(1);
+            
+            // Recommandation dynamique
+            let recommendation = "";
+            if (powerNeeded < 5) {
+                recommendation = "Système 24V avec onduleur 3-5kW, parfait pour l'autoconsommation simple. Installation rapide, retour sur investissement optimal.";
+            } else if (powerNeeded < 12) {
+                recommendation = "Système 48V hybride 5-12kW avec batteries Tesla Powerwall. Production + stockage + revente du surplus. Gestion intelligente incluse.";
+            } else {
+                recommendation = "Système triphasé 400V 12kW+ avec stockage massif et recharge véhicule rapide. Solution complète pour maisons énergivores.";
+            }
+            
+            // Mise à jour avec animations
+            animateValue('powerNeeded', `${powerNeeded} kW`);
+            animateValue('panelCount', `${panelCount}`);
+            animateValue('panelSurface', `${panelSurface} m²`);
+            animateValue('estimatedCost', `${estimatedCost.toLocaleString()} €`);
+            animateValue('annualSavings', `${annualSavings.toLocaleString()} €/an`);
+            animateValue('roi', `${roi} ans`);
+            document.getElementById('voltageRecommendation').textContent = recommendation;
+            
+            // Effet visuel sur les résultats
+            const resultsBox = document.querySelector('.results-box');
+            resultsBox.style.boxShadow = '0 0 50px rgba(255, 213, 0, 0.3)';
+            setTimeout(() => {
+                resultsBox.style.boxShadow = '';
+            }, 1000);
+        }
+
+        function animateValue(elementId, newValue) {
+            const element = document.getElementById(elementId);
+            const oldValue = element.textContent;
+            
+            if (oldValue !== newValue) {
+                element.style.transform = 'scale(1.2)';
+                element.style.color = 'transparent';
+                element.style.background = 'linear-gradient(135deg, var(--primary-light), var(--lighter))';
+                element.style.webkitBackgroundClip = 'text';
+                
+                setTimeout(() => {
+                    element.textContent = newValue;
+                    element.style.transform = 'scale(1)';
+                    setTimeout(() => {
+                        element.style.background = 'var(--gradient)';
+                    }, 300);
+                }, 200);
+            }
+        }
+
+        // Formulaire de rendez-vous premium
+        const appointmentForm = document.getElementById('appointmentForm');
+        const notification = document.getElementById('notification');
+
+        appointmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collecte des données
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                date: document.getElementById('date').value,
+                type: document.getElementById('consultationType').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simulation d'envoi
+            const submitBtn = this.querySelector('.btn');
+            const originalContent = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `
+                <div class="loader" style="width: 20px; height: 20px; border-width: 2px;"></div>
+                <span>Traitement en cours...</span>
+            `;
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Afficher la notification
+                notification.classList.add('show');
+                
+                // Réinitialiser le formulaire
+                appointmentForm.reset();
+                
+                // Restaurer le bouton
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+                
+                // Cacher la notification après 5 secondes
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 5000);
+                
+                // Confirmation visuelle
+                const container = document.querySelector('.appointment-container');
+                container.style.boxShadow = '0 0 60px rgba(0, 180, 216, 0.4)';
+                setTimeout(() => {
+                    container.style.boxShadow = '';
+                }, 1000);
+            }, 2000);
+        });
+
+        // Datepicker amélioré
+        const dateInput = document.getElementById('date');
+        const today = new Date();
+        const nextWeek = new Date(today);
+        nextWeek.setDate(today.getDate() + 7);
+        dateInput.min = today.toISOString().split('T')[0];
+        dateInput.value = nextWeek.toISOString().split('T')[0];
+
+        // Effets sonores (optionnels)
+        const playHoverSound = () => {
+            // Pour des effets sonores, vous pourriez ajouter des fichiers audio
+            // const audio = new Audio('hover.mp3');
+            // audio.volume = 0.1;
+            // audio.play();
+        };
+
+        const playClickSound = () => {
+            // const audio = new Audio('click.mp3');
+            // audio.volume = 0.2;
+            // audio.play();
+        };
+
+        // Ajouter des événements sonores
+        document.querySelectorAll('button, a, .checkbox-item').forEach(el => {
+            el.addEventListener('mouseenter', playHoverSound);
+            el.addEventListener('click', playClickSound);
+        });
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateSolarEstimate();
+            
+            // Effet de parallaxe sur la section hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero-bg');
+                if (hero) {
+                    hero.style.transform = `scale(${1 + scrolled * 0.0005}) translateY(${scrolled * 0.1}px)`;
+                }
+            });
+            
+            // Effet de typing sur le titre
+            const heroTitle = document.querySelector('.hero h1');
+            const originalText = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    heroTitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            // Démarrer l'effet typing après le chargement
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
